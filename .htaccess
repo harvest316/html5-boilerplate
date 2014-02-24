@@ -661,3 +661,14 @@ FileETag None
 #        SetOutputFilter INCLUDES
 #    </FilesMatch>
 # </IfModule>
+
+# ------------------------------------------------------------------------------
+# | Hide .htaccess from public view                                            |
+# ------------------------------------------------------------------------------
+
+# Prevent public access to .htaccess, even if someone errantly did a chmod 777
+
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>
